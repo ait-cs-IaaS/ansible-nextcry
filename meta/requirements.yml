@@ -1,0 +1,12 @@
+# Ansible Collections
+collections:
+  - name: git@git-service.ait.ac.at:sct-cyberrange/ansible-collections/owncloud.git
+    type: git
+    version: v0.3.1
+
+# Ansible Roles
+roles:
+  - src: https://github.com/owncloud-ansible/owncloud.git
+    scm: git
+    version: master
+    name: owncloud

@@ -1,0 +1,21 @@
+---
+- name: Start nginx
+  tags: [deloy]
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+  notify:
+  - restart nginx
+
+- name: Start php-fpm
+  tags: [deloy]
+  service:
+    name: php-fpm
+    state: started
+    enabled: yes
+  notify:
+  - restart php
+
+- name: Ensure handlers are notified
+  meta: flush_handlers

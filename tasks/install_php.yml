@@ -1,0 +1,24 @@
+---
+- name: nextcry-php installed
+  shell: "dpkg-query -W {{ nextcry_php_dpkg_name }}"
+  register: nextcry_php_installed
+  failed_when: "nextcry_php_installed.rc > 1"
+  changed_when: nextcry_php_installed.rc == 1
+
+- name: Download nextcry-php
+  get_url:
+    url: "{{ nextcry_php_url }}"
+    dest: "/tmp/{{ nextcry_php_dpkg_name }}.deb"
+  when: nextcry_php_installed.rc != 0
+
+- name: Install nextcry-php
+  apt:
+    deb: "/tmp/{{ nextcry_php_dpkg_name }}.deb"
+    state: present
+  when: nextcry_php_installed.rc != 0
+
+- name: cleanup deb artifacts
+  file:
+    path: "/tmp/{{ nextcry_php_dpkg_name }}.deb"
+    state: absent
+  when: nextcry_php_installed.rc != 0

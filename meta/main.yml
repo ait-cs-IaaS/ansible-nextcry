@@ -1,0 +1,10 @@
+galaxy_info:
+  author: Benjamin Akhras
+  description: Nextcry Vulnerablity.
+  company: Austrian Institute of Technology
+
+  license: license (GPLv2, CC-BY, etc)
+
+  min_ansible_version: 1.2
+
+  galaxy_tags: []

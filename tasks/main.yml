@@ -1,0 +1,22 @@
+---
+
+- name: Install nextcry-php from deb
+  tags: [install]
+  include_tasks: install_php.yml
+
+- name: Install cloud
+  tags: [install]
+  include_tasks: cloud.yml
+
+- name: Install nginx
+  tags: [install]
+  include_tasks: nginx.yml
+
+- name: Configure cloud
+  tags: [config]
+  include_tasks: config.yml
+
+- name: Start services
+  tags: [config, services]
+  include_tasks: services.yml
+

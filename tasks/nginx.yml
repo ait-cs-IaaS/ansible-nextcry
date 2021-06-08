@@ -1,0 +1,17 @@
+---
+- name: Install nginx package
+  tags: [install]
+  apt:
+    name: nginx
+    state: present
+
+- name: Add NGINX configuration file
+  template:
+    dest: /etc/nginx/sites-enabled/default
+    src: ../templates/nginx_default.conf.j2
+    owner: root
+    group: root
+    mode: 0644
+  notify:
+    - "restart nginx"
+    - "restart php"
