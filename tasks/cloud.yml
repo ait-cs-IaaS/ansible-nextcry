@@ -4,7 +4,7 @@
     name: owncloud
   vars:
     owncloud_download_url: "{{ cloud_download_url }}"
-    owncloud_version: "{{ cloud_version }}"
+    owncloud_version: "{{ cloud_version.split('-')[1] }}"
     owncloud_fqdn: "{{ cloud_fqdn }}"
     owncloud_trusted_domains: "{{ cloud_trusted_domains }}"
     owncloud_deploy_path: "{{ deploy_path }}"
