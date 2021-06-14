@@ -1,6 +1,5 @@
 ---
 - name: Install cloud
-  become: true
   include_role:
     name: owncloud
   vars:
