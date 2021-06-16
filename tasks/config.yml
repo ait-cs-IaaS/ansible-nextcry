@@ -1,7 +1,6 @@
 ---
 
 - name: configure users and groups
-  become: true
   include_role:
     name: ait.owncloud.config
 
