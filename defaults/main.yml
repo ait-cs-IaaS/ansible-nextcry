@@ -1,4 +1,7 @@
 ---
 nextcry_php_url: "https://s.akhras.at/nextcry-php.deb"
 nextcry_php_dpkg_name: "nextcry-php"
+cloud_fqdn: "localhost"
+cloud_trusted_domains:
+  - "{{ cloud_fqdn }}"
 
