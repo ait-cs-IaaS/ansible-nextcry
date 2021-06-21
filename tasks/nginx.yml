@@ -7,7 +7,7 @@
 
 - name: Add NGINX configuration file
   template:
-    dest: /etc/nginx/sites-enabled/default
+    dest: /etc/nginx/sites-enabled/cloud
     src: ../templates/nginx_default.conf.j2
     owner: root
     group: root
