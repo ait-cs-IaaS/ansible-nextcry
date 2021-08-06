@@ -1,10 +1,14 @@
 server {
-  listen 80;
+  listen {{ listen }};
   server_name {{ cloud_fqdn }};
 
   root {{ deploy_path }};
   index index.php index.html;
-
+{% if ssl_cert and ssl_key %}
+  listen {{ listen_ssl }};
+  ssl_certificate     {{ ssl_cert }};
+  ssl_certificate_key {{ ssl_key }};
+{% endif %}
   location ~ [^/]\.php(/|$) {
     fastcgi_split_path_info ^(.+?\.php)(/.*)$;
 

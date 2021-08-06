@@ -5,3 +5,8 @@ cloud_fqdn: "localhost"
 cloud_trusted_domains:
   - "{{ cloud_fqdn }}"
 
+ssl_cert: ""
+ssl_key: ""
+
+listen: "80 default_server"
+listen_ssl: "443 ssl default_server"
