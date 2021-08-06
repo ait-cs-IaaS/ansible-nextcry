@@ -1,14 +1,16 @@
 server {
   listen {{ listen }};
-  server_name {{ cloud_fqdn }};
-
-  root {{ deploy_path }};
-  index index.php index.html;
 {% if ssl_cert and ssl_key %}
   listen {{ listen_ssl }};
+
   ssl_certificate     {{ ssl_cert }};
   ssl_certificate_key {{ ssl_key }};
 {% endif %}
+
+  server_name {{ cloud_fqdn }};
+  root {{ deploy_path }};
+  index index.php index.html;
+
   location ~ [^/]\.php(/|$) {
     fastcgi_split_path_info ^(.+?\.php)(/.*)$;
 

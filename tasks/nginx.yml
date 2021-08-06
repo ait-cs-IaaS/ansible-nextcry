@@ -4,6 +4,13 @@
   apt:
     name: nginx
     state: present
+  when: manage_nginx
+
+- name: Cleanup temp files
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  when: manage_nginx
 
 - name: Add NGINX configuration file
   template:

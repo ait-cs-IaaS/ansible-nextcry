@@ -11,6 +11,7 @@
 - name: Install nginx
   tags: [install]
   include_tasks: nginx.yml
+  when: manage_nginx
 
 - name: Configure cloud
   tags: [config]
