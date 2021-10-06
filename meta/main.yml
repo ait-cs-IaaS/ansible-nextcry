@@ -1,7 +1,7 @@
 galaxy_info:
   role_name: nextcry
   author: Benjamin Akhras
-  description: Nextcry Vulnerablity.
+  description: Installs NextCloud vulnerable to Nextcry Vulnerablity.
   company: Austrian Institute of Technology
 
   license: GPL-3.0

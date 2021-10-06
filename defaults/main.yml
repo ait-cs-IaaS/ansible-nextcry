@@ -1,5 +1,5 @@
 ---
-nextcry_php_url: "https://s.akhras.at/nextcry-php.deb"
+nextcry_php_url: "https://github.com/ait-cs-IaaS/nextcry-php/releases/download/v1.0/nextcry-php.deb"
 nextcry_php_dpkg_name: "nextcry-php"
 cloud_fqdn: "localhost"
 cloud_trusted_domains:
