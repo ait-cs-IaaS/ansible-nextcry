@@ -12,3 +12,11 @@ listen: "80 default_server"
 listen_ssl: "443 ssl default_server"
 
 manage_nginx: true
+
+cloud_version: "owncloud-10.4.1"
+cloud_download_url: "https://download.owncloud.com/server/stable/owncloud-{{ owncloud_version }}.tar.bz2"
+
+# for Nextcloud use config below instead:
+# cloud_version: "latest-16"
+# cloud_download_url: "https://download.nextcloud.com/server/releases/{{ cloud_version }}.tar.bz2"
+
