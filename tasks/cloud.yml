@@ -1,6 +1,6 @@
 ---
 - name: Install cloud
-  include_role:
+  ansible.builtin.include_role:
     name: owncloud
   vars:
     owncloud_download_url: "{{ cloud_download_url }}"
@@ -8,17 +8,17 @@
     owncloud_fqdn: "{{ cloud_fqdn }}"
     owncloud_trusted_domains: "{{ cloud_trusted_domains }}"
     owncloud_deploy_path: "{{ deploy_path }}"
-    php_executable: "/usr/bin/php"
-    owncloud_db_type: "sqlite"
-    owncloud_apcu_enabled: False
-    owncloud_redis_enabled: False
+    php_executable: /usr/bin/php
+    owncloud_db_type: sqlite
+    owncloud_apcu_enabled: false
+    owncloud_redis_enabled: false
     owncloud_apps:
       - name: files_external
         state: present
-        enabled: 'yes'
+        enabled: "yes"
       - name: firstrunwizard
         state: present
-        enabled: 'no'
+        enabled: "no"
     owncloud_apps_config:
       - name: core
         parameters:
@@ -29,4 +29,4 @@
           - attribute: allow_user_mounting
             value: "yes"
           - attribute: user_mounting_backends
-            value: 'owncloud,sftp,smb,dav,\OC\Files\Storage\SFTP_Key,\OC\Files\Storage\SMB_OC'
+            value: owncloud,sftp,smb,dav,\OC\Files\Storage\SFTP_Key,\OC\Files\Storage\SMB_OC

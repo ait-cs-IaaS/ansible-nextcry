@@ -1,6 +1,4 @@
 ---
-
-- name: configure users and groups
-  include_role:
+- name: Configure users and groups
+  ansible.builtin.include_role:
     name: ait.owncloud.config
-

@@ -1,21 +1,21 @@
 ---
 - name: Start nginx
   tags: [deloy]
-  service:
+  ansible.builtin.service:
     name: nginx
     state: started
-    enabled: yes
+    enabled: true
   notify:
-  - restart nginx
+    - Restart nginx
 
 - name: Start php-fpm
   tags: [deloy]
-  service:
+  ansible.builtin.service:
     name: php-fpm
     state: started
-    enabled: yes
+    enabled: true
   notify:
-  - restart php
+    - Restart php
 
 - name: Ensure handlers are notified
-  meta: flush_handlers
+  ansible.builtin.meta: flush_handlers

@@ -1,24 +1,24 @@
 ---
 - name: Install nginx package
   tags: [install]
-  apt:
+  ansible.builtin.apt:
     name: nginx
     state: present
   when: manage_nginx
 
 - name: Cleanup temp files
-  file:
+  ansible.builtin.file:
     path: /etc/nginx/sites-enabled/default
     state: absent
   when: manage_nginx
 
 - name: Add NGINX configuration file
-  template:
+  ansible.builtin.template:
     dest: /etc/nginx/sites-enabled/cloud
     src: ../templates/nginx_default.conf.j2
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify:
-    - "restart nginx"
-    - "restart php"
+    - Restart nginx
+    - Restart php

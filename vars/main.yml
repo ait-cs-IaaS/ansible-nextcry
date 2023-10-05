@@ -1,3 +1,2 @@
 ---
-deploy_path: "/var/www/cloud"
-
+deploy_path: /var/www/cloud
